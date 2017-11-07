@@ -1,0 +1,23 @@
+{
+  "name": "lit-html-testing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start:dev": "webpack-dev-server -d --hot --watch",
+    "build": "webpack"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@webcomponents/webcomponentsjs": "^1.0.17",
+    "lit-html": "^0.7.1",
+    "page": "^1.7.1"
+  },
+  "devDependencies": {
+    "html-webpack-plugin": "^2.30.1",
+    "uglifyjs-webpack-plugin": "^1.0.1",
+    "webpack": "^3.8.1",
+    "webpack-dev-server": "^2.9.4"
+  }
+}
