@@ -1,15 +1,32 @@
 import { html, render } from 'lit-html/lib/lit-extended';
 import loader from '@webcomponents/webcomponentsjs';
-import app from './app.js';
+import '@polymer/paper-input/paper-input.js';
+import './app.js';
 
-let clickHandler = (e) => {
-  console.log(e);
+const label = 'Hello World';
+let value = '';
+
+let clickHandler = (e) => {  
+  value = '';
   render(helloTemplate('Steven'), document.body);
-};
+}
 
-const helloTemplate = (name) => html`
-  <div>Hello ${name}!</div>    
+let changeHandler = (e) => {
+  value = e.target.value;
+  render(helloTemplate(`Steve has typed this: ${value}`), document.body);
+}
+
+const helloTemplate = (text) => html`
+  <div>${text}</div>    
+  
   <button on-click="${(e) => clickHandler(e)}">button</button>
+  
+  <paper-input
+    label="${label}"
+    value="${value}"
+    on-value-changed="${(e) => changeHandler(e)}">
+  </paper-input>
+  
   <app-body></app-body>
 `;
 
