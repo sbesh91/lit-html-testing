@@ -3,17 +3,18 @@ import loader from '@webcomponents/webcomponentsjs';
 import '@polymer/paper-input/paper-input.js';
 import './app.js';
 
+const body = document.querySelector("#body");
 const label = 'Hello World';
 let value = '';
 
 let clickHandler = (e) => {  
   value = '';
-  render(helloTemplate('Steven'), document.body);
+  render(helloTemplate('Steven'), body);
 }
 
 let changeHandler = (e) => {
   value = e.target.value;
-  render(helloTemplate(`Steve has typed this: ${value}`), document.body);
+  render(helloTemplate(`Steve has typed this: ${value}`), body);
 }
 
 const helloTemplate = (text) => html`
@@ -30,4 +31,4 @@ const helloTemplate = (text) => html`
   <app-body></app-body>
 `;
 
-render(helloTemplate('Steve'), document.body);
+render(helloTemplate('Steve'), body);

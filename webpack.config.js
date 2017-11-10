@@ -1,6 +1,7 @@
 const path = require('path');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require("webpack");
 
 module.exports = {
   entry: {
@@ -18,6 +19,7 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template: './src/index.html'
-    })
+    }),
+    new webpack.IgnorePlugin(/vertx/)
   ]
 };
